@@ -1,6 +1,6 @@
 #creating 1st ec2 instace in public subnet
 resource "aws_instance" "dev_ins-1" {
-  ami                         = "ami-0557a15b87f6559cf"
+  ami                         = "ami-0dfcb1ef8550277af"
   instance_type               = "t2.micro"
   count                       = 1
   key_name                    = "dev"

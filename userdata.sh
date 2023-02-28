@@ -1,9 +1,11 @@
 #!/bin/bash
-sudo apt update -y
-sudo apt-get full-upgrade -y
-sudo apt-get  install python3-pip -y
-sudo git clone https://github.com/vasudev915/car-prediction.git 
-cd car-prediction
-sudo apt install python3-pip -y
-pip install -r requirements.txt 
-screen -m -d python3 app.py
+sudo yum update
+sudo yum -y install git
+sudo yum -y install docker
+sudo usermode -a -G docker ec2-user
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo chkconfig docker on
+sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose version
